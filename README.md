@@ -17,6 +17,8 @@ steps:
 #steps to create DNS for jenkins
 we will need to use ingress. for that we will need to: 
 1. deploy ingress controller in the cluster (as nginx for example).
-2. create ingress def with node port service
+2. create ingress resource yaml file for the jenkins with the dns settings
 
 ## steps to create docker file with jenkins pipeline
+
+
