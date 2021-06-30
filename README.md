@@ -21,4 +21,6 @@ we will need to use ingress. for that we will need to:
 
 ## steps to create docker file with jenkins pipeline
 
+##monitoring
+with promethous & grafana
 
