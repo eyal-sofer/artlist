@@ -31,6 +31,7 @@ spec:
 """
 }
    }
+  stages {
     stage('Push') {
       steps {
         container('docker') {
@@ -41,3 +42,4 @@ spec:
       }
     }
   }
+}
