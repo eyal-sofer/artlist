@@ -13,14 +13,6 @@ spec:
   # Use service account that can deploy to all namespaces
   serviceAccountName: cd-jenkins
   containers:
-  - name: maven
-    image: maven:latest
-    command:
-    - cat
-    tty: true
-    volumeMounts:
-      - mountPath: "/root/.m2"
-        name: m2
   - name: docker
     image: docker:latest
     command:
@@ -39,25 +31,6 @@ spec:
 """
 }
    }
-  stages {
-    stage('Build') {
-      steps {
-        container('maven') {
-          sh """
-                        mvn package -DskipTests
-                                                """
-        }
-      }
-    }
-    stage('Test') {
-      steps {
-        container('maven') {
-          sh """
-             mvn test
-          """
-        }
-      }
-    }
     stage('Push') {
       steps {
         container('docker') {
