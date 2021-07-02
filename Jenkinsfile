@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    kubernetes {
+    any {
       label 'spring-petclinic-demo'
       defaultContainer 'jnlp'
       yaml """
