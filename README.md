@@ -10,7 +10,7 @@ steps:
 steps:
 1. install helm
 2. add bitnai repo (helm repo add bitnami https://charts.bitnami.com/bitnami)
-3. run chart with cutom variables: helm install jenkins --set jenkinsUser=admin,jenkinsPassword=password,service.type=NodePort,service.port=8080 bitnami/jenkins
+3. run chart with cutom variables: helm install jenkins --set jenkinsUser=admin,jenkinsPassword=password,service.type=NodePort,service.port=8080,extraVolumes=/Users/eyal/.docker:/home/jenkins/.docker:rw bitnami/jenkins
    which set the service as NodePort instead of Load Balancer which is for cloud use and not to use with Minikube. 
 4. jenkins is now available at: http://192.168.99.100:31417 - ip of Minikube host and port assgined to jenkins service.
 
